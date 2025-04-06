@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"strings"
+	"bookingApp/helper"
 )
 
 func main() {
@@ -18,16 +19,15 @@ func main() {
 	var email string
 
 	for {
-		fmt.Printf("Get your tickets for %v here!\n", confName)
-		fmt.Printf("We have a total of %v tickets and %v are still available.\n", confTickets, remainingTickets)
-		
-		fmt.Print("Type in your email address: ")
+		helper.GreetUser(confName, confTickets, remainingTickets)
+
+		fmt.Print(helper.InputLabel("email"))
 		fmt.Scan(&email)
 
-		fmt.Print("Type in your first name: ")
+		fmt.Print(helper.InputLabel("first name"))
 		fmt.Scan(&firstName)
 
-		fmt.Print("Type in your last name: ")
+		fmt.Print(helper.InputLabel("last name"))
 		fmt.Scan(&lastName)
 
 		fmt.Print("Enter number of tickets you want to buy: ")
